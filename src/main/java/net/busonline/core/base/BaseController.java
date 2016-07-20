@@ -39,7 +39,7 @@ public class BaseController {
 		if (null != mapObject) {
 			allMap.put("data", mapObject);
 		}
-		String result = JSON.toJSONString(allMap,s).replaceAll(":null", ":\"\"");
+		String result = JSON.toJSONString(mapObject,s).replaceAll(":null", ":\"\"");
 		return result;
 	}
 	protected String jsonSuccess2(Object mapObject) {

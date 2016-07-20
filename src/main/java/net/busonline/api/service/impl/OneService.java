@@ -1,5 +1,6 @@
 package net.busonline.api.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,10 @@ public class OneService implements IOneService {
 	private OneMapper oneMapper;
 
 	@Override
-	public Map<String, Object> select() {
+	public List<Map<String, Object>> select() {
 		// TODO Auto-generated method stub
-		Map<String,Object>map = oneMapper.getOneById("1");
-		System.out.println(map.get("name"));
-		return map;
+		List<Map<String,Object>>list = oneMapper.getOneById("1");
+//		System.out.println(map.get("name"));
+		return list;
 	}
 }

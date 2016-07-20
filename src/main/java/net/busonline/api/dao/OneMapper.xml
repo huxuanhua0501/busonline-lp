@@ -8,8 +8,6 @@
 				c.del_status,
 				c.parent_id
 			FROM
-				city c
-			WHERE
-				c.id =#{id};
+				city c;
 	</select>
 </mapper>

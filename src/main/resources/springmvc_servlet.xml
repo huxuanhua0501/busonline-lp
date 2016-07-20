@@ -9,6 +9,20 @@
  http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+<!-- 解决ajax返回string乱码,需要在annotation-driven之前 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
   	<!-- 启用MVC注解 -->
     <mvc:annotation-driven />
 	<context:component-scan base-package="net.**.controller"
@@ -25,10 +39,10 @@ http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
   
   <mvc:resources location="/resources/" mapping="/resources/**"/>  
       <!-- 处理静态资源 -->
-      <mvc:resources mapping="/*" location="/*" />  
-   <mvc:resources location="main" mapping="/resource/main/**"/>
+      <mvc:resources location="/"  mapping="/*" />  
+  <!--  <mvc:resources location="main" mapping="/resource/main/**"/>
 	<mvc:resources location="css" mapping="/resource/**"/>
-	<mvc:resources location="lib" mapping="/resource/**"/>
-	<mvc:resources location="vendor" mapping="/resource/**"/>
+	<mvc:resources location="js" mapping="/resource/**"/>
+	<mvc:resources location="vendor" mapping="/resource/**"/> -->
 </beans>
 	

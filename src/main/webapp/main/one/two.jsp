@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
@@ -19,7 +20,6 @@
 		$.jgrid.defaults.width = 780;
 	</script>
 	<script src="../../js/bootstrap.min.js"></script>
-    <meta charset="utf-8" />
     <title>jqGrid Loading Data - Million Rows from a REST service</title>
 </head>
 <body>
@@ -32,20 +32,31 @@
         $(document).ready(function () {
       
             $("#jqGrid").jqGrid({
-                url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+            	 jsonReader: {
+        			 root: "items",
+        			 page: "page",
+        		     total: "totalPages",
+        		     records: "totalCount",
+        		     id: "id"
+        		 },
+                url: '../../oneController/find',
                 mtype: "GET",
 				styleUI : 'Bootstrap',
-                datatype: "jsonp",
+                datatype: "JSON",
                 colModel: [
-                    { label: '订单ID', name: 'OrderID', key: true, width: 75 },
-                    { label: '客户ID', name: 'CustomerID', width: 150 },
-                    { label: '订单日期', name: 'OrderDate', width: 150 },
-                    { label: '什么鬼', name: 'Freight', width: 150 },
-                    { label:'不知道啊', name: 'ShipName', width: 150 }
+                    { label: '订单ID', name: 'level', key: true, width: 100 },
+                    { label: '客户ID', name: 'name', width: 150 },
+                    { label: '订单日期', name: 'del_status', width: 150 },
+                    { label: '什么鬼', name: 'parent_id', width: 150 }
+                    
                 ],
-				viewrecords: true,
-                height: 250,
-                rowNum: 20,
+                viewrecords: true,
+       		 autowidth: true,
+                height: 'auto',
+                rowNum: 10,
+                sortorder: "desc", //倒序
+               /*  pager: "#grid-pager", */
+                multiselect: true,
                 pager: "#jqGridPager"
             });
         });

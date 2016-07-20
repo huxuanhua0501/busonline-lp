@@ -1,7 +1,11 @@
 package net.busonline.api.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.busonline.api.service.IOneService;
@@ -14,8 +18,14 @@ public class OneController extends BaseController{
 	@Autowired
 	private IOneService oneService;
 
-	@RequestMapping("find")
-	public void select() {
-		System.out.println(this.jsonSuccess(oneService.select()));
+	@RequestMapping(value = "find",method = { RequestMethod.POST,
+			RequestMethod.GET })
+	public String select() {
+	   List<Map<String,Object>> list = oneService.select();
+	   
+		for(Map<String,Object> map:list){
+			System.out.println(map.get("name"));
+		}
+		return this.jsonSuccess(oneService.select());
 	}
 }

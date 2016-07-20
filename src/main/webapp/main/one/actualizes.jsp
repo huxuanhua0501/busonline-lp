@@ -42,7 +42,7 @@
 			try {
 				ace.settings.check('main-container', 'fixed')
 			} catch (e) {
-			}
+			} 
 		</script>
 
 		<!-- #section:basics/sidebar -->
