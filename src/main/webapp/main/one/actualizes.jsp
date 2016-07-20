@@ -1,22 +1,23 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta charset="utf-8" />
-<title>电商运营系统</title>
+<title>巴士在线电子屏管理系统</title>
 
 <meta name="description" content="overview &amp; stats" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<link rel="stylesheet" href="../../../css/datepicker.min.css" th:href="@{${session.resources}+'/css/datepicker.min.css'}"/>
-<link rel="stylesheet" href="../../../css/ui.jqgrid.min.css"
+<link rel="stylesheet" href="../../css/datepicker.min.css" th:href="@{${session.resources}+'/css/datepicker.min.css'}"/>
+<link rel="stylesheet" href="../../css/ui.jqgrid.min.css"
 	th:href="@{${session.resources}+'/css/ui.jqgrid.min.css'}" />
-<link rel="stylesheet" href="../../../css/bootstrap.css"
+<link rel="stylesheet" href="../../css/bootstrap.min.css"
 	th:href="@{${session.resources}+'/css/bootstrap.min.css'}" />
-<link rel="stylesheet" href="../../../css/font-awesome.css"
+<link rel="stylesheet" href="../../css/font-awesome.css"
 	th:href="@{${session.resources}+'/css/font-awesome.min.css'}" />
-<link rel="stylesheet" href="../../../css/base.css"
+<link rel="stylesheet" href="../../css/base.css"
 	th:href="@{${session.resources}+'/css/base.css'}" />
 <!-- page specific plugin styles -->
 <!-- text fonts -->
@@ -27,8 +28,8 @@
 <link rel="stylesheet" href="../../css/ace.css"
 	class="ace-main-stylesheet" id="main-ace-style"
 	th:href="@{${session.resources}+'/css/ace.min.css'}" />
-	<link rel="stylesheet" href="../../../css/common.css" th:href="@{${session.resources}+'/css/common.css'}"  />
-<link rel="stylesheet" href="../assets/css/ace-part2.css"  th:href="@{${session.resources}+'/css/ace-part2.css'}" class="ace-main-stylesheet" />
+	<link rel="stylesheet" href="../../css/common.css" th:href="@{${session.resources}+'/css/common.css'}"  />
+<link rel="stylesheet" href="../../css/ace-part2.css"  th:href="@{${session.resources}+'/css/ace-part2.css'}" class="ace-main-stylesheet" />
 </head>
 
 <body class="no-skin">
@@ -42,7 +43,7 @@
 			try {
 				ace.settings.check('main-container', 'fixed')
 			} catch (e) {
-			} 
+			}
 		</script>
 
 		<!-- #section:basics/sidebar -->
@@ -95,14 +96,14 @@
 
 		<script src="../../js/jquery1x.min.js"
 			th:src="@{${session.resources} + '/js/jquery1x.min.js'}"></script>
-		<script src="../../js/bootstrap.js"
+		<script src="../../js/bootstrap.min.js"
 			th:src="@{${session.resources} + '/js/bootstrap.min.js'}"></script>
-		<script src="../../js/jquery-ui.custom.js"
+		<script src="../../js/jquery-ui.custom.min.js"
 			th:src="@{${session.resources} + '/js/jquery-ui.custom.min.js'}"></script>
 <script src="../../js/popLayer.js" th:src="@{${session.resources} + '/js/popLayer.js'}"></script>
 
-		<script src="../../js/ace/ace.js"
-			th:src="@{${session.resources} + '/js/ace.js'}"></script>
+		<script src="../../js/ace.min.js"
+			th:src="@{${session.resources} + '/js/ace.min.js'}"></script>
 		<script src="../../js/ace.sidebar.js"
 			th:src="@{${session.resources} + '/js/ace.sidebar.js'}"></script>
 		<script src="../../js/ace.submenu-hover.js"
@@ -110,15 +111,14 @@
 
 
 
-<script src="../../js/date-time/bootstrap-datepicker.min.js'}" th:src="@{${session.resources} + '/js/date-time/bootstrap-datepicker.min.js'}"></script>
-		<script src="../assets/js/jqGrid/jquery.jqGrid.src.js"
+<script src="../../js/date-time/bootstrap-datepicker.min.js" th:src="@{${session.resources} + '/js/date-time/bootstrap-datepicker.min.js'}"></script>
+		<script src="../../js/jqGrid/jquery.jqGrid.min.js"
 			th:src="@{${session.resources} + '/js/jqGrid/jquery.jqGrid.min.js'}"></script>
-		<script src="../assets/js/jqGrid/i18n/grid.locale-en.js"
+		<script src="../../js/jqGrid/i18n/grid.locale-en.js"
 			th:src="@{${session.resources} + '/js/jqGrid/i18n/grid.locale-cn.js'}"></script>
-		<script src="./app/actualize/js/actualizes.js"
-			th:src="@{${session.resources} + '/app/actualize/js/actualizes.js'}"></script>
-		<script src="./app/base/js/base.js"
-			th:src="@{${session.resources} + '/js/base.js'}"></script>
+		<script src="./js/actualizes.js"
+			th:src="@{${session.resources} + '/js/actualizes.js'}"></script>
+		 
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">

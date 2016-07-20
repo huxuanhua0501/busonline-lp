@@ -18,7 +18,7 @@ $(document).ready(function(){
 		$("#myModal-alertNoPlus333").modal("show");	
 		$.ajax({//显示实施顾问
 			   type: "POST",
-			   url: '../oneController/find',
+			   url: '../actualize/selectActualizes.json',
 			   success: function(msg){
 			     var selObj = $("#actualizeUser").empty();;
  			     for(var i = 0; i<msg.length;i++){
@@ -44,7 +44,7 @@ $(document).ready(function(){
 			    	   data: {ids:ids.toString(), actualizeId:actualizeId},
 		               dataType: "json",
 					   type: "POST",
-					   url: '../oneController/find',
+					   url: '../actualize/updateActualizeUser.json',
 					   success: function(msg){
 						   var seller_nick = jQuery.trim(jQuery("#seller_nick").val());
 							  var mobile = jQuery.trim(jQuery("#mobile").val());
@@ -71,7 +71,7 @@ $(document).ready(function(){
 	
 	
 	
-	
+
 	
 	
 	jQuery("#sub_button").click(function(){
@@ -97,7 +97,7 @@ $(document).ready(function(){
 		    	   data: {ids:ids.toString()},
 	              dataType: "json",
 				   type: "POST",
-				   url: '../oneController/find',
+				   url: '../actualize/updateActualizeSatus.json',
 				   success: function(msg){
 					   //var seller_nick = jQuery("#seller_nick").val();
 						//  var mobile = jQuery("#mobile").val();
@@ -129,6 +129,7 @@ $(document).ready(function(){
 	
 	
 	$(window).on('resize.jqGrid', function () {
+		alert("sdfsdf");
 		$('#grid-table').jqGrid( 'setGridWidth', $(".page-content").width() );
     })
 	
@@ -233,7 +234,7 @@ $(document).ready(function(){
 		     records: "totalCount",
 		     id: "id"
 		 },
-		  url: '../oneController/find',
+		 url: '../actualize/actualizes.json',
          mtype: "POST",
          datatype: "json",
          colModel: [

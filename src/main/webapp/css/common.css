@@ -1,0 +1,35 @@
+.control-label{
+	padding-top:7px;
+}
+.footer{
+	padding-top:0 !important;
+}
+.deline{
+	border-bottom:1px dashed #438EB9;
+	margin-bottom:10px;
+}
+.datepicker{
+	z-index:1050 !important;
+}
+.no-tableMsg{
+    background: #fbf9e4 none repeat scroll 0 0;
+    border: 1px solid #eee;
+    color: #d09501;
+    font-family: microsoft yahei;
+    font-size: 14px;
+    padding: 30px;
+    text-align: center;
+}
+.no-tableMsg img{
+	margin-right:10px;
+}
+.saveBtnBox{
+	margin-top:5px;
+}
+.alert-title{
+	margin-left:20px;
+}
+#gbox_grid-redlogs-table{
+	width:860px;
+	margin:0 auto;
+}
