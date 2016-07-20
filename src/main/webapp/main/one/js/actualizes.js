@@ -223,7 +223,7 @@ $(document).ready(function(){
 		 jQuery("#cendTime").val('');
 	 });
 	 
-	$('#grid-table').jqGrid({
+/*	$('#grid-table').jqGrid({
 		 jsonReader: {
 			 root: "items",
 			 page: "page",
@@ -266,7 +266,7 @@ $(document).ready(function(){
 			}, 0);
 			
   		},
-	});
+	});*/
 	
 	function updatePagerIcons(table) {
 		var replacement = 
