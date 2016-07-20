@@ -8,14 +8,14 @@
     <!-- The jQuery library is a prerequisite for all jqSuite products -->
     <script type="text/javascript" src="../../js/jquery1x.min.js"></script> 
     <!-- We support more than 40 localizations -->
-    <script type="text/ecmascript" src="../../js/i18n/grid.locale-en.js"></script>
+    <script type="text/ecmascript" src="../../js/jqGrid/i18n/grid.locale-en.js"></script>
     <!-- This is the Javascript file of jqGrid -->   
-    <script type="text/ecmascript" src="../../js/jquery.jqGrid.min.js"></script>
+    <script type="text/ecmascript" src="../../js/jqGrid/jquery.jqGrid.min.js"></script>
     <!-- This is the localization file of the grid controlling messages, labels, etc.
     <!-- A link to a jQuery UI ThemeRoller theme, more than 22 built-in and many more custom -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css"> 
     <!-- The link to the CSS that the grid needs -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/ui.jqgrid-bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/ui.jqgrid-bootstarp.css" />
 	<script>
 		$.jgrid.defaults.width = 780;
 	</script>

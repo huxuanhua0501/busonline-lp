@@ -129,12 +129,11 @@ $(document).ready(function(){
 	
 	
 	$(window).on('resize.jqGrid', function () {
-		alert("sdfsdf");
 		$('#grid-table').jqGrid( 'setGridWidth', $(".page-content").width() );
     })
 	
 	$.createQueryForm($('#query-form'), {
-    	action: '',
+    	action: '../../oneController/find',
     	method: 'post',
     	number:'2', 	//text select每行的个数
     	isTab: false,
@@ -142,13 +141,11 @@ $(document).ready(function(){
     	y:6,	//input 宽度 (text select)
     	z:4,	//radio 宽度  checkbox宽度=12-z
     	fieldModel: [
-    	     { label: '活动名称', name: 'activity_name', type: 'text', id:'activity_name'},
-    	     { label: '卖家旺旺', name: 'seller_nick', type: 'text', id:'seller_nick'},
-    	     { label: '手机号', name: 'mobile', type: 'text',id:'mobile'},
-    	     { label: '代付开始时间', name: 'startTime', type: 'text',id:'startTime'},
-    	     { label: '代付结束时间', name: 'endTime', type: 'text',id:'endTime'},
-    	     { label: '创建开始时间', name: 'cstartTime', type: 'text',id:'cstartTime'},
-    	     { label: '创建结束时间', name: 'cendTime', type: 'text',id:'cendTime'}
+    	             { label: 'I D', name: 'id', hidden:true, width: 200 },
+                     { label: '订单ID', name: 'level', type: 'text', id:'level', width: 100 },
+                     { label: '客户ID', name: 'name',type: 'text', id:'name', width: 150 },
+                     { label: '订单日期', name: 'del_status', type: 'text', id:'del_status',width: 150 },
+                     { label: '什么鬼', name: 'parent_id',type: 'text', id:'parent_id', width: 150 }
     	],
 		buttons :[ 
 	    		{id:'search', value:'查询', type:'primary'},
@@ -234,18 +231,15 @@ $(document).ready(function(){
 		     records: "totalCount",
 		     id: "id"
 		 },
-		 url: '../actualize/actualizes.json',
+		 url: '../../oneController/find',
          mtype: "POST",
          datatype: "json",
          colModel: [
                     { label: 'I D', name: 'id', hidden:true, width: 200 },
-                    { label: '活动名称', name: 'activity_name', width: 220 },
-                    { label: '卖家旺旺号', name: 'seller_nick', width: 200 },
-                    { label: '支付宝姓名', name: 'name',width: 200  },
-                    { label: '手机号', name: 'mobile',width: 200 },
-                    { label: '代付时间', name: 'pay_time',width: 200 },
-                    { label: '创建时间', name: 'create_time',width: 200 },
-                    { label:'实施顾问', name: 'actualize_name', width: 200, sorttype:"date"}
+                    { label: '订单ID', name: 'level', type: 'text', id:'level', width: 100 },
+                    { label: '客户ID', name: 'name',type: 'text', id:'name', width: 150 },
+                    { label: '订单日期', name: 'del_status', type: 'text', id:'del_status',width: 150 },
+                    { label: '什么鬼', name: 'parent_id',type: 'text', id:'parent_id', width: 150 }
          ],
 		 viewrecords: true,
 		 autowidth: true,
