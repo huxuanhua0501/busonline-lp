@@ -23,7 +23,12 @@ http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 		<property name="suffix" value=".jsp" />
 	</bean>
   
-   <mvc:resources location="/resources/" mapping="/resources/**"/>
-   
+  <mvc:resources location="/resources/" mapping="/resources/**"/>  
+      <!-- 处理静态资源 -->
+      <mvc:resources mapping="/*" location="/*" />  
+   <mvc:resources location="main" mapping="/resource/main/**"/>
+	<mvc:resources location="css" mapping="/resource/**"/>
+	<mvc:resources location="lib" mapping="/resource/**"/>
+	<mvc:resources location="vendor" mapping="/resource/**"/>
 </beans>
 	
