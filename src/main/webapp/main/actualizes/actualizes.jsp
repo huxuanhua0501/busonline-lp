@@ -39,61 +39,7 @@
 
 	<!-- /section:basics/navbar.layout -->
 	<div class="main-container" id="main-container">
-		<script type="text/javascript">
-			try {
-				ace.settings.check('main-container', 'fixed')
-			} catch (e) {
-			}
-		</script>
-		
-		<script type="text/javascript">
-		  $(document).ready(function () {
-		$('#grid-table').jqGrid({
-			 jsonReader: {
-				 root: "items",
-				 page: "page",
-			     total: "totalPages",
-			     records: "totalCount",
-			     id: "id"
-			 },
-			 url: '../../oneController/find',
-	         mtype: "POST",
-	         datatype: "json",
-	         colModel: [
-	                    { label: 'I D', name: 'id', hidden:true, width: 200 },
-	                    { label: '订单ID', name: 'level', type: 'text', id:'level', width: 100 },
-	                    { label: '客户ID', name: 'name',type: 'text', id:'name', width: 150 },
-	                    { label: '订单日期', name: 'del_status', type: 'text', id:'del_status',width: 150 },
-	                    { label: '什么鬼', name: 'parent_id',type: 'text', id:'parent_id', width: 150 }
-	         ],
-			 viewrecords: true,
-			 autowidth: true,
-	         height: 'auto',
-	         rowNum: 15,
-	         sortorder: "desc", //倒序
-	         pager: "#grid-pager",
-	         multiselect: true,
-	         loadComplete : function() {
-	  			var table = this;
-	  			var ids = jQuery("#grid-table").jqGrid('getDataIDs');
-				
-				$(".no-tableMsg").each(function(){
-			    	$(this).remove();
-			    });
-				
-				if(ids.length==0){
-					$("#grid-table").find(".no-tableMsg").remove();
-			    	$("#grid-table").parent().append('<div class="no-tableMsg"><img src="'+getNoMsgImage()+'" />没有符合条件的交易</div>');
-					
-				}
-				setTimeout(function(){
-					updatePagerIcons(table);
-				}, 0);
-				
-	  		},
-		});
-		  });
-		</script>
+
 
 		<!-- #section:basics/sidebar -->
 		<div id="sidebar" class="sidebar responsive"
@@ -165,6 +111,8 @@
 			th:src="@{${session.resources} + '/js/jqGrid/jquery.jqGrid.min.js'}"></script>
 		<script src="../../js/jqGrid/i18n/grid.locale-en.js"
 			th:src="@{${session.resources} + '/js/jqGrid/i18n/grid.locale-cn.js'}"></script>
+			<script src="../../js/base.js"
+			th:src="@{${session.resources} + '/js/base.js'}"></script>
 		<script src="./js/actualizes.js"
 			th:src="@{${session.resources} + '/js/actualizes.js'}"></script>
 		 

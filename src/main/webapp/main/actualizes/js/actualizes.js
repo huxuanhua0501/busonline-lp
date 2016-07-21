@@ -2,8 +2,6 @@ $(document).ready(function(){
 	//resize to fit page size
 	
 	
-	 alert("werwerwe");
-	
 	jQuery("#pointActualize").click(function(){
 		
 		 var ids;
@@ -234,15 +232,15 @@ $(document).ready(function(){
 		     records: "totalCount",
 		     id: "id"
 		 },
-		 url: '../actualize/actualizes.json',
+		 url: '../../oneController/find',
          mtype: "POST",
          datatype: "json",
          colModel: [
                     { label: 'I D', name: 'id', hidden:true, width: 200 },
-                    { label: '活动名称', name: 'activity_name', width: 220 },
-                    { label: '卖家旺旺号', name: 'seller_nick', width: 200 },
-                    { label: '支付宝姓名', name: 'name',width: 200  },
-                    { label: '手机号', name: 'mobile',width: 200 },
+                    { label: '活动名称', name: 'level', width: 220 },
+                    { label: '卖家旺旺号', name: 'name', width: 200 },
+                    { label: '支付宝姓名', name: 'del_status',width: 200  },
+                    { label: '手机号', name: 'parent_id',width: 200 },
                     { label: '代付时间', name: 'pay_time',width: 200 },
                     { label: '创建时间', name: 'create_time',width: 200 },
                     { label:'实施顾问', name: 'actualize_name', width: 200, sorttype:"date"}
