@@ -23,9 +23,9 @@ public class OneController extends BaseController{
 	public String select() {
 	   List<Map<String,Object>> list = oneService.select();
 	   
-//		for(Map<String,Object> map:list){
-//			System.out.println(map.get("name"));
-//		}
+		for(Map<String,Object> map:list){
+			System.out.println(map.get("name"));
+		}
 		return this.jsonSuccess(oneService.select());
 	}
 }
